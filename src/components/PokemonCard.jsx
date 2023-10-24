@@ -18,7 +18,7 @@ export default function PokemonCard(props) {
     return (
       <>
         {statArr.map((a) => (
-          <p class="mt-4">
+          <p key={a.id} className="mt-4">
             {a.stat.name}: {a.base_stat}
           </p>
         ))}

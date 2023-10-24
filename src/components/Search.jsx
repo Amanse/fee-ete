@@ -1,18 +1,22 @@
 import { useState } from "react";
 import ListOfPokis from "../assets/PokemonList";
 import PokemonCard from "./PokemonCard";
+import { useEffect } from "react";
 
 export default function Search() {
   const [searchTerm, setTerm] = useState("");
   const [result, setRes] = useState([]);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
+  useEffect(() => {
+    if (searchTerm == "" || searchTerm.length < 3) return;
     const matches = ListOfPokis.filter((s) =>
       s.toLowerCase().includes(searchTerm.toLowerCase()),
     );
     setRes(matches);
+  }, [searchTerm]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
     window.scrollBy(100);
   };
