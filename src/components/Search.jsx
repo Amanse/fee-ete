@@ -18,13 +18,13 @@ export default function Search() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    window.scrollBy(100);
+    window.scrollBy(0, 500);
   };
 
   return (
     <>
       <center className="bg-base-200">
-        <h1 className="text-3xl py-10">Get started</h1>
+        <h1 className="text-3xl py-10">Start typing to get started</h1>
         <form onSubmit={(e) => handleSubmit(e)}>
           <input
             type="text"
